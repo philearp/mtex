@@ -201,6 +201,8 @@ for i = 1:numel(sP)
     
     % plot labels
     if check_option(varargin,{'text','label','labeled'})
+        % Phil Earp Edit
+        % -------------
         if ~check_option(varargin,{'textReplacesMarker'})
             text(v,get_option(varargin,{'text','label'}),'parent',sP(i).ax,...
                 'addMarkerSpacing',varargin{:},'doNotDraw');
@@ -208,6 +210,7 @@ for i = 1:numel(sP)
             text(v,get_option(varargin,{'text','label'}),'parent',sP(i).ax,...
                 varargin{:},'doNotDraw');
         end
+        % -------------
     end
     
     if isappdata(sP(1).parent,'mtexFig')
@@ -295,7 +298,8 @@ for it = 1:length(t)
         setappdata(t(it),'extent',extend);
     end
     margin = get(t(it),'margin');
-    xy(2) = xy(2) + direction*(extend(4)/2 + margin + markerSize/2 + 5);
+%     xy(2) = xy(2) + direction*(extend(4)/2 + margin + markerSize/2 + 5);
+    xy(2) = xy(2) + direction*(extend(4)/2 + margin + markerSize/2 + 0);
     
     set(t(it),'position',xy);
     set(t(it),'unit','data');
